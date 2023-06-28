@@ -323,14 +323,14 @@ class Task:
     def isRoKRunning(self):
         cmd = "dumpsys window windows | grep mCurrentFocus"
         str = self.device.shell(cmd)
-        return str.find("com.lilithgame.roc.gp/com.harry.engine.MainActivity") != -1
+        return str.find("com.rok.gp.vn/com.harry.engine.MainActivity") != -1
 
     def runOfRoK(self):
-        cmd = "am start -n com.lilithgame.roc.gp/com.harry.engine.MainActivity"
+        cmd = "am start -n com.rok.gp.vn/com.harry.engine.MainActivity"
         str = self.device.shell(cmd)
 
     def stopRok(self):
-        cmd = "am force-stop com.lilithgame.roc.gp"
+        cmd = "am force-stop com.rok.gp.vn"
         str = self.device.shell(cmd)
 
     def set_text(self, **kwargs):
