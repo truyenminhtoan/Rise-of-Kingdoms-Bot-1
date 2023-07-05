@@ -4,7 +4,7 @@ from filepath.file_relative_paths import ImagePathAndProps
 from tasks.constants import BuildingNames
 from tasks.constants import TaskName
 from tasks.Task import Task
-
+import time
 
 class Tavern(Task):
     def __init__(self, bot):
@@ -18,8 +18,7 @@ class Tavern(Task):
         super().home_gui_full_view()
         tavern_pos = self.bot.building_pos[BuildingNames.TAVERN.value]
 
-
-         # tap tavern k4 building
+        #  tap tavern k4 building
         x, y = tavern_pos
         super().set_text(insert='Tap tavern at position ({}, {})'.format(x, y))
         super().tap(x, y, 1)
@@ -64,19 +63,4 @@ class Tavern(Task):
                 return next_task
             x, y = confirm_btn_pos
             super().tap(x, y, 4)
-
-
-
-
-
-        # super().tap(316, 20, 1)
-        # super().tap(636, 140, 1)
-        # super().input("137")
-        # super().tap(1174, 650, 1)
-        # super().tap(794, 140, 1)
-        # super().input("672")
-        # super().tap(1174, 650, 1)
-        # super().tap(882, 140, 1)
-        
-
         return next_task

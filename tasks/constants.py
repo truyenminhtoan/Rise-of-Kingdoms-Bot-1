@@ -52,6 +52,7 @@ class TaskName(Enum):
     SCOUT = 11
     GATHER_GEM = 12
     MYSTERY_MERCHANT = 13
+    TITLE = 14
 
 
 class Resource(Enum):

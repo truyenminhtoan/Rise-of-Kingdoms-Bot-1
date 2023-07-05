@@ -36,8 +36,8 @@ class Break(Task):
 
     def do_no_wait(self, next_task = TaskName.COLLECTING):
         try:
-            super().call_idle_back()
-            super().heal_troops()
+            # super().call_idle_back()
+            # super().heal_troops()
             return next_task
         except Exception as e:
             traceback.print_exc()

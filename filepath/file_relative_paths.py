@@ -310,6 +310,14 @@ class ImagePathAndProps(Enum):
         25,
         MATERIALS_PRODUCTION,
     ]
+    TITLE_ICON_IMAGE_PATH = [
+        "resource\\title-icon.png",
+        (1280, 720),
+        (0, 0, 0, 0),
+        0.90,
+        25,
+        TAVERN_BUTTON,
+    ]   
     TAVERN_BUTTON_BUTTON_IMAGE_PATH = [
         "resource\\tavern_button.png",
         (1280, 720),
@@ -589,6 +597,14 @@ class ImagePathAndProps(Enum):
         0.90,
         25,
         VERIFICATION_VERIFY_TITLE,
+    ]
+    EXPEDITION_IMAGE_PATH = [
+        "resource\\expedition_button.png",
+        (1280, 720),
+        (0, 0, 0, 0),
+        0.90,
+        25,
+        SUNSET_CANYON_BTN,
     ]
     SUNSET_CANYON_IMAGE_PATH = [
         "resource\\sunset_canyon.png",

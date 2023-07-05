@@ -109,3 +109,6 @@ class BotConfig:
         self.useItemsVip = config.get('useItemsVip', False)
         self.useItemsGems = config.get('useItemsGems', False)
         self.useItemsDailyRss = config.get('useItemsDailyRss', False)
+
+        # Title bot
+        self.enableTitle = config.get('enableTitle', True)

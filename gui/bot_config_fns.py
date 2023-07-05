@@ -131,6 +131,8 @@ use_items_vip = checkbox_fn_creator('useItemsVip', 'Use VIP Points')
 use_items_gems = checkbox_fn_creator('useItemsGems', 'Use Gem Items')
 use_items_daily_rss = checkbox_fn_creator('useItemsDailyRss', 'Use 5 Level1 Resource Packs for Daily Quest')
 
+enable_title_bot_checkbox = checkbox_fn_creator('enableTitle', 'Enable Title Bot')
+
 
 def resource_ratio(app, parent):
     label_texts = ['Food:', 'Wood:', 'Stone:', 'Gold:']
@@ -198,7 +200,8 @@ bot_config_title_fns = [
     [enable_scout_checkbox, [enable_Investigation_checkbox]],
     [enable_sunset_canyon_checkbox, []],
     [enable_lost_canyon_checkbox, []],
-    [use_items, [use_items_vip, use_items_gems, use_items_daily_rss]]
+    [use_items, [use_items_vip, use_items_gems, use_items_daily_rss]],
+    [enable_title_bot_checkbox, []]
 ]
 
 

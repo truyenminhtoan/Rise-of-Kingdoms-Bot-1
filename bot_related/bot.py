@@ -32,8 +32,14 @@ from tasks.Training import Training
 from tasks.MysteryMerchant import MysteryMerchant
 from tasks.SunsetCanyon import SunsetCanyon
 from tasks.constants import TaskName
+from tasks.Title import Title
 from utils import stop_thread
 import random
+
+import firebase_admin
+from firebase_admin import credentials, db
+from config import load_config
+
 
 DEFAULT_RESOLUTION = {"height": 720, "width": 1280}
 
@@ -58,6 +64,7 @@ class Bot:
         self.building_pos = {}
 
         self.config = BotConfig(config)
+        self.config.global_config = load_config()
         self.curr_task = TaskName.BREAK
 
         self.task = Task(self)
@@ -80,11 +87,19 @@ class Bot:
         self.sunset_canyon = SunsetCanyon(self)
         self.lost_canyon = LostCanyon(self)
         self.items_task = Items(self)
+        self.title_bot = Title(self)
 
         # Other task
         self.screen_shot_task = ScreenShot(self)
 
         self.round_count = 0
+
+        # Firebase
+        cred = credentials.Certificate("./firebase-adminsdk.json")
+        firebase_admin.initialize_app(cred, {
+            'databaseURL': self.config.global_config.firebaseDb
+        })
+        self.db = db
 
     def start(self, fn):
         if self.daemon_thread is not None and self.daemon_thread.is_alive():
@@ -125,6 +140,7 @@ class Bot:
             [self.sunset_canyon, "enableSunsetCanyon"],
             [self.lost_canyon, "enableLostCanyon"],
             [self.items_task, "useItems"],
+            [self.title_bot, "enableTitle"],
         ]
 
         if self.building_pos is None:

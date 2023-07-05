@@ -31,7 +31,6 @@ class Config:
         self.haoiUser = config.get('haoiUser', None)
         self.haoiRebate = config.get('haoiRebate', None)
         self.twocaptchaKey = config.get('twocaptchaKey', None)
-
-
+        self.firebaseDb = config.get('firebaseDb', None)
 
 global_config = Config()

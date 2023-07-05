@@ -18,7 +18,6 @@ import time
 
 from filepath.constants import RESOURCES, SPEEDUPS, BOOSTS, EQUIPMENT, OTHER, MAP, HOME
 
-
 class Task:
 
     center = (640, 360)
@@ -385,4 +384,8 @@ class Task:
 
     def do(self, next_task):
         return next_task
+    
+    def getdb(self):
+        ref = self.bot.db.reference("/Books/Titles/")
+        return ref
     
