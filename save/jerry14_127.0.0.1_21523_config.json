@@ -48,7 +48,7 @@
   "enableScout": false,
   "enableInvestigation": true,
   "enableSunsetCanyon": true,
-  "enableLostCanyon": true,
+  "enableLostCanyon": false,
   "useItems": true,
   "useItemsVip": false,
   "useItemsGems": false,

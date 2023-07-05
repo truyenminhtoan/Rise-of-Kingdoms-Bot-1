@@ -13,10 +13,36 @@ class Tavern(Task):
     def do(self, next_task=TaskName.TRAINING):
         super().set_text(title='Tavern', remove=True)
         super().set_text(insert='Init view')
+        super().back_to_map_gui()
         super().back_to_home_gui()
         super().home_gui_full_view()
         tavern_pos = self.bot.building_pos[BuildingNames.TAVERN.value]
 
+
+         # tap tavern k4 building
+        x, y = tavern_pos
+        super().set_text(insert='Tap tavern at position ({}, {})'.format(x, y))
+        super().tap(x, y, 1)
+        _, _, tavern_btn_pos = self.gui.check_any(ImagePathAndProps.TAVERN_K4_BUTTON_BUTTON_IMAGE_PATH.value)
+        if tavern_btn_pos is None:
+            return next_task
+        x, y = tavern_btn_pos
+        super().tap(x, y, 4)
+        _, _, open_btn_pos = self.gui.check_any(ImagePathAndProps.CHEST_OPEN_BUTTON_IMAGE_PATH.value)
+        if open_btn_pos is None:
+            return next_task
+        x, y = open_btn_pos
+        super().set_text(insert="Tap open button at ({}, {})".format(x, y))
+        super().tap(x, y, 4)
+        _, _, confirm_btn_pos = self.gui.check_any(ImagePathAndProps.CHEST_CONFIRM_BUTTON_IMAGE_PATH.value)
+        if confirm_btn_pos is not None:
+            x, y = confirm_btn_pos
+            super().tap(x, y, 4)    
+
+        super().back_to_map_gui()
+        super().back_to_home_gui()
+        super().home_gui_full_view()
+        tavern_pos = self.bot.building_pos[BuildingNames.TAVERN.value]
         # tap tavern building
         x, y = tavern_pos
         super().set_text(insert='Tap tavern at position ({}, {})'.format(x, y))
@@ -38,4 +64,19 @@ class Tavern(Task):
                 return next_task
             x, y = confirm_btn_pos
             super().tap(x, y, 4)
+
+
+
+
+
+        # super().tap(316, 20, 1)
+        # super().tap(636, 140, 1)
+        # super().input("137")
+        # super().tap(1174, 650, 1)
+        # super().tap(794, 140, 1)
+        # super().input("672")
+        # super().tap(1174, 650, 1)
+        # super().tap(882, 140, 1)
+        
+
         return next_task

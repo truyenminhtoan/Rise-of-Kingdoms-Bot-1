@@ -368,5 +368,21 @@ class Task:
 
         self.bot.text_update_event(self.bot.text)
 
+    def input(self, x, sleep_time=2):
+        cmd = "input text {}".format(x)
+        str = self.device.shell(cmd)
+        time.sleep(sleep_time)
+
+    def zoom_in(self, sleep_time=2):
+        cmd = "input keyevent 132"
+        str = self.device.shell(cmd)
+        time.sleep(sleep_time)
+
+    def zoom_out(self, sleep_time=2):
+        cmd = "input keyevent 133"
+        str = self.device.shell(cmd)
+        time.sleep(sleep_time)
+
     def do(self, next_task):
         return next_task
+    

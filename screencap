@@ -1,0 +1,1 @@
+adb shell screencap -p /sdcard/image.png && adb pull /sdcard/image.png C:\Users\Tran\Desktop\

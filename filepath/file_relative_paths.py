@@ -318,6 +318,14 @@ class ImagePathAndProps(Enum):
         25,
         TAVERN_BUTTON,
     ]
+    TAVERN_K4_BUTTON_BUTTON_IMAGE_PATH = [
+        "resource\\tavern_k4_button.png",
+        (1280, 720),
+        (0, 0, 0, 0),
+        0.90,
+        25,
+        TAVERN_BUTTON,
+    ]
     CHEST_OPEN_BUTTON_IMAGE_PATH = [
         "resource\\chest_open_button.png",
         (1280, 720),
